@@ -3,7 +3,7 @@
 
 
 
-# **Git & GitHub Learning Guide**
+## **Git & GitHub Learning Guide**
 
 ## **1. What is Git and GitHub?**
 
