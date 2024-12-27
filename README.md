@@ -157,4 +157,153 @@
   - List files/folders to exclude from tracking.
 - **Licenses in Repositories**:
   - Use [ChooseALicense.com](https://choosealicense.com/) to decide.
+ 
+  - ## **Advanced Git Commands**
+Expand your Git knowledge with these advanced commands:
+
+1. **Amend the Last Commit**:
+   - Modify the last commit without creating a new one:
+     ```bash
+     git commit --amend -m "Updated commit message"
+     ```
+
+2. **Revert a Commit**:
+   - Undo changes from a specific commit:
+     ```bash
+     git revert <commit_hash>
+     ```
+
+3. **Rebase**:
+   - Rewrite commit history to maintain a clean linear history:
+     ```bash
+     git rebase main
+     ```
+   - Interactive rebase to edit commit history:
+     ```bash
+     git rebase -i HEAD~3
+     ```
+
+4. **Stash Changes**:
+   - Temporarily save uncommitted changes:
+     ```bash
+     git stash
+     ```
+   - Apply stashed changes:
+     ```bash
+     git stash apply
+     ```
+
+5. **Cherry-Pick**:
+   - Apply a specific commit from one branch to another:
+     ```bash
+     git cherry-pick <commit_hash>
+     ```
+
+6. **Clean Untracked Files**:
+   - Remove untracked files and directories:
+     ```bash
+     git clean -fd
+     ```
+
+---
+
+### **GitHub Actions**
+GitHub Actions automates workflows directly in your repository. Common use cases include Continuous Integration (CI), deployment, and automated testing.
+
+1. **Setting Up a Workflow**
+   - Add a `.github/workflows` directory in your repository.
+   - Create a YAML file (e.g., `ci.yml`):
+     ```yaml
+     name: CI Pipeline
+     on:
+       push:
+         branches:
+           - main
+     jobs:
+       build:
+         runs-on: ubuntu-latest
+         steps:
+           - name: Checkout code
+             uses: actions/checkout@v2
+           - name: Set up Node.js
+             uses: actions/setup-node@v2
+             with:
+               node-version: '16'
+           - name: Install dependencies
+             run: npm install
+           - name: Run tests
+             run: npm test
+     ```
+
+2. **Common GitHub Actions**
+   - **Linting and Testing**: Run code checks automatically on every push.
+   - **Deployment**: Deploy to platforms like AWS, Firebase, or Vercel.
+   - **Scheduled Tasks**: Automate tasks using CRON syntax.
+
+---
+
+### **Git Workflows**
+Optimize team collaboration with structured workflows.
+
+1. **Centralized Workflow**
+   - Single branch (e.g., `main`).
+   - Ideal for small teams or solo projects.
+
+2. **Feature Branch Workflow**
+   - Create branches for individual features:
+     ```bash
+     git checkout -b feature/new-feature
+     ```
+   - Merge back into `main` after completing the feature:
+     ```bash
+     git merge feature/new-feature
+     ```
+
+3. **Gitflow Workflow**
+   - Structured with specific branch types:
+     - `main`: Production-ready code.
+     - `develop`: Integrates completed features.
+     - `feature`: For individual features.
+     - `release`: Prepares a new release.
+     - `hotfix`: Quick fixes for production issues.
+
+4. **Forking Workflow**
+   - Use forks to contribute to public repositories.
+   - Workflow:
+     1. Fork the repository on GitHub.
+     2. Clone the forked repository:
+        ```bash
+        git clone <forked_repo_url>
+        ```
+     3. Push changes to the fork and submit a Pull Request.
+
+5. **Pull Request Workflow**
+   - Open a Pull Request (PR) for team reviews before merging changes.
+   - Address comments and feedback iteratively.
+
+---
+
+### **Additional Tools and Tips**
+1. **Git Aliases**:
+   - Simplify common commands:
+     ```bash
+     git config --global alias.st status
+     git config --global alias.co checkout
+     ```
+
+2. **Git Hooks**:
+   - Automate tasks like pre-commit linting:
+     - Add scripts in `.git/hooks` (e.g., `pre-commit`).
+
+3. **Visualizing Git History**:
+   - Use `git log` with advanced options:
+     ```bash
+     git log --oneline --graph --decorate --all
+     ```
+
+4. **Git GUI Tools**:
+   - Popular tools: GitKraken, Sourcetree, Tower.
+
+
+
 
