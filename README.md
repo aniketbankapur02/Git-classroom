@@ -158,7 +158,7 @@
 - **Licenses in Repositories**:
   - Use [ChooseALicense.com](https://choosealicense.com/) to decide.
  
-  - ## **Advanced Git Commands**
+  - ### **Advanced Git Commands**
 Expand your Git knowledge with these advanced commands:
 
 1. **Amend the Last Commit**:
